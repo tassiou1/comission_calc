@@ -12,8 +12,9 @@ def calculate_duration_multiplier(duration):
 
 def calculate_commission(deal_size, deal_duration, yearly_target, yearly_bonus):
     """Calculate commission based on input parameters."""
-    # Calculate base rate
-    base_rate = yearly_bonus / yearly_target
+    # Calculate base rate using monthly target
+    monthly_target = yearly_target / 12
+    base_rate = yearly_bonus / monthly_target
     
     # Get duration multiplier
     duration_multiplier = calculate_duration_multiplier(deal_duration)
